@@ -11,8 +11,8 @@ Project layout
 The Maven projects contained within are as follows:
 
 * _servicemix-test-utils_ - Contains utility classes for use with [Pax Exam Karaf](https://github.com/openengsb/labs-paxexam-karaf), that simplify the configuration of an integration with ServiceMix.
-* _dm-bundle_ - Contains a SpringDM bundle with a Camel route to be tested. Includes a [pax-exam](http://team.ops4j.org/wiki/display/paxexam/Pax+Exam) integration test for the bundle to check that it deploys as expected.
-* _dm-features_ - Defines a `features.xml` which deploys the `dm-bundle`; tests the feature as a [pax-exam](http://team.ops4j.org/wiki/display/paxexam/Pax+Exam) integration test.
+* _dm-integration-testing/dm-bundle_ - Contains a SpringDM bundle with a Camel route to be tested. Includes a [pax-exam](http://team.ops4j.org/wiki/display/paxexam/Pax+Exam) integration test for the bundle to check that it deploys as expected.
+* _dm-integration-testing/dm-features_ - Defines a `features.xml` which deploys the `dm-bundle`; tests the feature as a [pax-exam](http://team.ops4j.org/wiki/display/paxexam/Pax+Exam) integration test.
 
 Prerequisites
 =============
