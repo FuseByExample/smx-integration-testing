@@ -10,10 +10,10 @@
 
 	<import resource="dm-bundle-context.xml"/>
 	
-	<osgi:service id="helloService" interface="com.specsavers.servicemix.Hello" ref="helloBean"/>
+	<osgi:service id="helloService" interface="com.fusesource.examples.dm_bundle.Hello" ref="helloBean"/>
 
 	<!-- define properties here -->
-	<osgix:cm-properties id="properties" persistent-id="com.specsavers.servicemix.dm-bundle">
+	<osgix:cm-properties id="properties" persistent-id="com.fusesource.examples.dm-bundle">
 		<prop key="broker.url">failover:(tcp://localhost:61616)</prop>
 	</osgix:cm-properties>
 

@@ -1,11 +1,12 @@
-package com.specsavers.servicemix;
-import static com.specsavers.servicemix.testUtils.SmxMavenIntegrationTestSupport.featuresPath;
-import static com.specsavers.servicemix.testUtils.SmxMavenIntegrationTestSupport.servicemixDistributionConfiguration;
+package com.fusesource.examples.dm_features;
+import static com.fusesource.examples.testUtils.SmxMavenIntegrationTestSupport.featuresPath;
+import static com.fusesource.examples.testUtils.SmxMavenIntegrationTestSupport.servicemixDistributionConfiguration;
 import static org.ops4j.pax.exam.CoreOptions.options;
 import static org.ops4j.pax.exam.CoreOptions.scanFeatures;
 
 import javax.inject.Inject;
 
+import com.fusesource.examples.dm_bundle.Hello;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

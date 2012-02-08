@@ -1,4 +1,4 @@
-package com.specsavers.servicemix;
+package com.fusesource.examples.dm_bundle;
 
 import java.util.concurrent.TimeUnit;
 

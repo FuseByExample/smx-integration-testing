@@ -1,4 +1,4 @@
-package com.specsavers.servicemix.testUtils;
+package com.fusesource.examples.testUtils;
 
 import static org.openengsb.labs.paxexam.karaf.options.KarafDistributionOption.karafDistributionConfiguration;
 import static org.ops4j.pax.exam.CoreOptions.maven;

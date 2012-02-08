@@ -1,7 +1,7 @@
-package com.specsavers.servicemix;
+package com.fusesource.examples.dm_bundle;
 
-import static com.specsavers.servicemix.testUtils.SmxMavenIntegrationTestSupport.bundlePath;
-import static com.specsavers.servicemix.testUtils.SmxMavenIntegrationTestSupport.servicemixDistributionConfiguration;
+import static com.fusesource.examples.testUtils.SmxMavenIntegrationTestSupport.bundlePath;
+import static com.fusesource.examples.testUtils.SmxMavenIntegrationTestSupport.servicemixDistributionConfiguration;
 import static org.ops4j.pax.exam.CoreOptions.bundle;
 import static org.ops4j.pax.exam.CoreOptions.options;
 

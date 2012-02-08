@@ -10,7 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-	<groupId>com.specsavers.servicemix</groupId>
+	<groupId>com.fusesource.examples</groupId>
 	<artifactId>dm-integration-test</artifactId>
 	<packaging>pom</packaging>
 	<version>1.0-SNAPSHOT</version>
@@ -19,7 +19,7 @@
 
 	<properties>
 		<junit-version>4.7</junit-version>
-		<servicemix-test-utils-version>1.0.0-SNAPSHOT</servicemix-test-utils-version>
+		<servicemix-test-utils-version>1.0-SNAPSHOT</servicemix-test-utils-version>
 		<karaf-version>2.2.2-fuse-00-06</karaf-version> <!-- needs to match that in smx -->
 		<servicemix-version>4.4.1-fuse-01-13</servicemix-version>
 
@@ -34,7 +34,6 @@
 
 		<fusesource-repo>http://repo.fusesource.com/maven2</fusesource-repo>
 
-		<maven-compiler-plugin-version>2.3.2</maven-compiler-plugin-version>
 		<maven-bundle-plugin-version>2.3.4</maven-bundle-plugin-version>
 		<maven-failsafe-plugin-version>2.11</maven-failsafe-plugin-version>
 		<depends-maven-plugin-version>1.2</depends-maven-plugin-version>
@@ -144,7 +143,7 @@
 			</dependency>
 
 			<dependency>
-				<groupId>com.specsavers.servicemix</groupId>
+				<groupId>com.fusesource.examples</groupId>
 				<artifactId>servicemix-test-utils</artifactId>
 				<version>${servicemix-test-utils-version}</version>
 				<scope>test</scope>

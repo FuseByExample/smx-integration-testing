@@ -11,7 +11,7 @@
     </bean>
 
     <!-- other beans -->
-    <bean class="com.specsavers.servicemix.HelloBean" id="helloBean">
+    <bean class="com.fusesource.examples.dm_bundle.HelloBean" id="helloBean">
         <property name="say" value="Hi from Camel" />
     </bean>
 
