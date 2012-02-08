@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:camel="http://camel.apache.org/schema/spring"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        
+		http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+    <!-- component definition -->
+    <bean id="activemq" class="org.apache.activemq.camel.component.ActiveMQComponent">
+        <property name="brokerURL" value="${broker.url}" />
+    </bean>
+
+    <!-- other beans -->
+    <bean class="com.specsavers.servicemix.HelloBean" id="helloBean">
+        <property name="say" value="Hi from Camel" />
+    </bean>
+
+    <camelContext id="context.dm-bundle" xmlns="http://camel.apache.org/schema/spring">
+        <route id="respondToMessage">
+            <from uri="activemq:in" />
+            <transform>
+                <method method="hello" ref="helloBean" />
+            </transform>
+            <to uri="activemq:out" />
+        </route>
+    </camelContext>
+
+</beans>

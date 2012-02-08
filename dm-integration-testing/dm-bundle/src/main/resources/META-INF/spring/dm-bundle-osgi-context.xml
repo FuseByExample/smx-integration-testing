@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:osgi="http://www.springframework.org/schema/osgi" 
+	xmlns:osgix="http://www.springframework.org/schema/osgi-compendium" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="   
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd           
+		http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd
+		http://www.springframework.org/schema/osgi-compendium http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd">
+
+	<import resource="dm-bundle-context.xml"/>
+	
+	<osgi:service id="helloService" interface="com.specsavers.servicemix.Hello" ref="helloBean"/>
+
+	<!-- define properties here -->
+	<osgix:cm-properties id="properties" persistent-id="com.specsavers.servicemix.dm-bundle">
+		<prop key="broker.url">failover:(tcp://localhost:61616)</prop>
+	</osgix:cm-properties>
+
+</beans>

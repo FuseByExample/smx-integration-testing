@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.fusesource.examples</groupId>
+        <artifactId>smx-integration-testing</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+	<groupId>com.specsavers.servicemix</groupId>
+	<artifactId>dm-integration-test</artifactId>
+	<packaging>pom</packaging>
+	<version>1.0-SNAPSHOT</version>
+
+	<name>${application-name} :: ${project.artifactId}</name>
+
+	<properties>
+		<junit-version>4.7</junit-version>
+		<servicemix-test-utils-version>1.0.0-SNAPSHOT</servicemix-test-utils-version>
+		<karaf-version>2.2.2-fuse-00-06</karaf-version> <!-- needs to match that in smx -->
+		<servicemix-version>4.4.1-fuse-01-13</servicemix-version>
+
+		<camel-version>2.8.0</camel-version>
+		<activemq-version>5.5.0</activemq-version>
+		<xbean-version>3.4.3</xbean-version>
+		<spring-version>3.0.5.RELEASE</spring-version>
+
+		<slf4j-version>1.6.1</slf4j-version>
+		<log4j-version>1.2.16</log4j-version>
+		<camel-version>2.8.0</camel-version>
+
+		<fusesource-repo>http://repo.fusesource.com/maven2</fusesource-repo>
+
+		<maven-compiler-plugin-version>2.3.2</maven-compiler-plugin-version>
+		<maven-bundle-plugin-version>2.3.4</maven-bundle-plugin-version>
+		<maven-failsafe-plugin-version>2.11</maven-failsafe-plugin-version>
+		<depends-maven-plugin-version>1.2</depends-maven-plugin-version>
+
+		<maven-resources-plugin-version>2.5</maven-resources-plugin-version>
+		<build-helper-plugin-version>1.7</build-helper-plugin-version>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>fusesource</id>
+			<url>${fusesource-repo}</url>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>fusesource</id>
+			<url>${fusesource-repo}</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<modules>
+		<module>dm-bundle</module>
+		<module>dm-features</module>
+	</modules>
+
+	<dependencies>
+		<!-- logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+		</dependency>
+
+		<!-- test dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${spring-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.camel</groupId>
+				<artifactId>camel-core</artifactId>
+				<version>${camel-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.camel</groupId>
+				<artifactId>camel-spring</artifactId>
+				<version>${camel-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.camel</groupId>
+				<artifactId>camel-jms</artifactId>
+				<version>${camel-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.activemq</groupId>
+				<artifactId>activemq-core</artifactId>
+				<version>${activemq-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.activemq</groupId>
+				<artifactId>activemq-pool</artifactId>
+				<version>${activemq-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.activemq</groupId>
+				<artifactId>activemq-camel</artifactId>
+				<version>${activemq-version}</version>
+			</dependency>
+
+
+			<!-- test dependencies -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit-version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.camel</groupId>
+				<artifactId>camel-test</artifactId>
+				<version>${camel-version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.specsavers.servicemix</groupId>
+				<artifactId>servicemix-test-utils</artifactId>
+				<version>${servicemix-test-utils-version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.servicemix</groupId>
+				<artifactId>apache-servicemix</artifactId>
+				<version>${servicemix-version}</version>
+				<type>zip</type>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.karaf</groupId>
+				<artifactId>apache-karaf</artifactId>
+				<version>${karaf-version}</version>
+				<type>zip</type>
+				<scope>test</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>org.apache.karaf.shell</groupId>
+						<artifactId>org.apache.karaf.shell.dev</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+			<!-- logging -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${slf4j-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${log4j-version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven-compiler-plugin-version}</version>
+					<configuration>
+						<source>1.6</source>
+						<target>1.6</target>
+					</configuration>
+				</plugin>
+
+				<!-- allows a camel route to be ran via 'mvn camel:run' -->
+				<plugin>
+					<groupId>org.apache.camel</groupId>
+					<artifactId>camel-maven-plugin</artifactId>
+					<version>${camel-version}</version>
+				</plugin>
+
+				<!-- generates the MANIFEST-FILE of the bundle -->
+				<plugin>
+					<groupId>org.apache.felix</groupId>
+					<artifactId>maven-bundle-plugin</artifactId>
+					<version>${maven-bundle-plugin-version}</version>
+					<extensions>true</extensions>
+					<configuration>
+						<instructions>
+							<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                            <Import-Package>*</Import-Package>
+						</instructions>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.servicemix.tooling</groupId>
+					<artifactId>depends-maven-plugin</artifactId>
+					<version>${depends-maven-plugin-version}</version>
+					<executions>
+						<execution>
+							<id>generate-depends-file</id>
+							<goals>
+								<goal>generate-depends-file</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-failsafe-plugin</artifactId>
+					<version>${maven-failsafe-plugin-version}</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>integration-test</goal>
+								<goal>verify</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<systemPropertyVariables>
+							<failsafe.karafVersion>${karaf-version}</failsafe.karafVersion>
+							<failsafe.buildArtifactName>${project.artifactId}-${project.version}.jar</failsafe.buildArtifactName>
+							<failsafe.buildDirectory>${project.build.directory}/</failsafe.buildDirectory>
+						</systemPropertyVariables>
+					</configuration>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>

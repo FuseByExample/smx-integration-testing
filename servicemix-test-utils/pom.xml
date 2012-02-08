@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+    xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.fusesource.examples</groupId>
+        <artifactId>smx-integration-testing</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.specsavers.servicemix</groupId>
+    <artifactId>servicemix-test-utils</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>bundle</packaging>
+
+    <name>${application-name} :: ${project.artifactId}</name>
+
+    <properties>
+        <junit-version>4.10</junit-version>
+        <pax-exam-version>2.3.0</pax-exam-version>
+        <paxexam-karaf-container-version>0.5.0</paxexam-karaf-container-version>
+
+        <slf4j-version>1.6.1</slf4j-version>
+        <log4j-version>1.2.16</log4j-version>
+
+		<maven-bundle-plugin-version>2.3.4</maven-bundle-plugin-version>
+
+        <fusesource-repo>http://repo.fusesource.com/maven2</fusesource-repo>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>fusesource</id>
+            <url>${fusesource-repo}</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>fusesource</id>
+            <url>${fusesource-repo}</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <dependencies>
+        <!-- logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j-version}</version>
+        </dependency>
+
+        <!-- test dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ops4j.pax.exam</groupId>
+            <artifactId>pax-exam</artifactId>
+            <version>${pax-exam-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ops4j.pax.exam</groupId>
+            <artifactId>pax-exam-junit4</artifactId>
+            <version>${pax-exam-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openengsb.labs.paxexam.karaf</groupId>
+            <artifactId>paxexam-karaf-container</artifactId>
+            <version>${paxexam-karaf-container-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.felix.karaf.shell</groupId>
+            <artifactId>org.apache.felix.karaf.shell.console</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>${maven-bundle-plugin-version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
