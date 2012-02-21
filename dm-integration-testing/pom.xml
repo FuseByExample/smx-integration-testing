@@ -33,30 +33,7 @@
 	<name>${application-name} :: ${project.artifactId}</name>
 
 	<properties>
-		<junit-version>4.7</junit-version>
 		<servicemix-test-utils-version>1.0-SNAPSHOT</servicemix-test-utils-version>
-		<karaf-version>2.2.2-fuse-00-06</karaf-version> <!-- needs to match that in smx -->
-		<servicemix-version>4.4.1-fuse-01-13</servicemix-version>
-
-		<camel-version>2.8.0</camel-version>
-		<activemq-version>5.5.0</activemq-version>
-		<xbean-version>3.4.3</xbean-version>
-		<spring-version>3.0.5.RELEASE</spring-version>
-
-		<slf4j-version>1.6.1</slf4j-version>
-		<log4j-version>1.2.16</log4j-version>
-		<camel-version>2.8.0</camel-version>
-
-		<fusesource-repo>http://repo.fusesource.com/maven2</fusesource-repo>
-
-		<maven-bundle-plugin-version>2.3.4</maven-bundle-plugin-version>
-		<maven-failsafe-plugin-version>2.11</maven-failsafe-plugin-version>
-		<depends-maven-plugin-version>1.2</depends-maven-plugin-version>
-
-		<maven-resources-plugin-version>2.5</maven-resources-plugin-version>
-		<build-helper-plugin-version>1.7</build-helper-plugin-version>
-
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<repositories>

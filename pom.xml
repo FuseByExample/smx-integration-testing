@@ -28,14 +28,44 @@
 
 	<properties>
 		<application-name>ServiceMix Integration Testing</application-name>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<fusesource-repo>http://repo.fusesource.com/maven2</fusesource-repo>
+
+		<junit-version>4.7</junit-version>
+		<xbean-version>3.4.3</xbean-version>
+		<spring-version>3.0.5.RELEASE</spring-version>
+		<slf4j-version>1.6.1</slf4j-version>
+		<log4j-version>1.2.16</log4j-version>
 
 		<maven-compiler-plugin-version>2.3.2</maven-compiler-plugin-version>
+		<maven-bundle-plugin-version>2.3.4</maven-bundle-plugin-version>
+		<maven-failsafe-plugin-version>2.11</maven-failsafe-plugin-version>
+		<depends-maven-plugin-version>1.2</depends-maven-plugin-version>
+
+		<maven-resources-plugin-version>2.5</maven-resources-plugin-version>
+		<build-helper-plugin-version>1.7</build-helper-plugin-version>
 	</properties>
 
 	<modules>
 		<module>servicemix-test-utils</module>
 		<module>dm-integration-testing</module>
 	</modules>
+
+	<profiles>
+		<profile>
+			<id>servicemix-4.4.1</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<fuse-version>fuse-01-13</fuse-version>
+				<servicemix-version>4.4.1-${fuse-version}</servicemix-version>
+				<karaf-version>2.2.2</karaf-version> <!-- needs to match that in smx -->
+				<camel-version>2.8.0-${fuse-version}</camel-version>
+				<activemq-version>5.5.1-${fuse-version}</activemq-version>
+			</properties>
+		</profile>
+	</profiles>
 
 	<build>
 		<pluginManagement>
