@@ -1,3 +1,6 @@
+NOTE: This project is not supported on JBoss Fuse version 6.3 or later
+-----------------------------------------------------------------------
+
 This project demonstrates a number of mechanisms for testing OSGi artifacts based on SpringDM that are intended to be deployed against ServiceMix. It is intended to demonstrate:
 
 * integration testing of OSGi bundles and Karaf features being deployed into a Karaf container
